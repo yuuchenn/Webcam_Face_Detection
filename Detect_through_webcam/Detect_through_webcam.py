@@ -56,7 +56,7 @@ while True :
     gender = gender_list[gender_preds[0].argmax()]
     print("Gender : " + gender)
 
-#Predict Age
+# Predict Age
     age_net.setInput(blob)
     age_preds = age_net.forward()
     age = age_list[age_preds[0].argmax()]
@@ -66,8 +66,9 @@ while True :
     cv2.putText(frame, overlay_text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255) , 2, cv2.LINE_AA)
 
     cv2.imshow('frame', frame)  
-#0xFF is a hexadecimal constant which is 11111111 in binary.
+# 0xFF is a hexadecimal constant which is 11111111 in binary.
     if cv2.waitKey(1) & 0xFF == ord('q'): 
         break
+# Free webcam resources
 video_capture.release()
 cv2.destroyAllWindows()
